@@ -1,54 +1,46 @@
 /*
   author: Sian01
   name: Sidney A. Sahonero
-  problem link: 
 */
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-using ull = unsigned long long;
-using pii = pair<int, int>;
-using pll = pair<ll, ll>;
-#define vi vector<int>
 #define vll vector<ll>
-#define all(x) begin(x), end(x)
-#define sz(x) (int)(x).size()
+#define vvll vector<vector<ll>>
 const ll INF = 4e18;
-const int MOD = 1e9 + 7;
-
-ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }  //gcd(12,18)=6 maximo comun divisor
-ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }      //lcm(4,6)=12 minimo comun multiplo
-ll binpow(ll a, ll b, ll m = MOD) {                   // a^b
-  ll r = 1;
-  a %= m;
-  for (; b; b >>= 1, a = a * a % m)
-    if (b & 1) r = r * a % m;
-  return r;
-}
-ll inv(ll a) { return binpow(a, MOD - 2); }
-
-#ifdef LOCAL
-#define dbg(x) cerr << #x << " = " << (x) << " [l" << __LINE__ << "]\n"
-#define dbgv(v)                           \
-  cerr << #v << " = [";                   \
-  for (auto& _e : (v)) cerr << _e << ' '; \
-  cerr << "]\n"
-#else
-#define dbg(x)
-#define dbgv(v)
-#endif
 
 void solve() {
-  int n, p, s, t1, t2, t3, d1, d2, d3;
-  cin >> n >> p >> s >> t1 >> t2 >> t3 >> d1 >> d2 >> d3;
+  ll n, p, s, t[3], d[3];
+  cin >> n >> p >> s;
+  for (ll &x : t) cin >> x;
+  for (ll &x : d) cin >> x;
 
-  for (int i = 0; i < n; ++i) {
-    for (int i = 0; i < n; ++i) {
-      for (int i = 0; i < n; ++i) {
-        
+  vvll dp(n + 1, vll(s + 2, INF));
+  dp[0][0] = 0;
+
+  for (ll lap = 0; lap < n; lap++) {
+    for (ll stops = 0; stops <= s; stops++) {
+      if (dp[lap][stops] == INF) continue;
+
+      for (int tipo = 0; tipo < 3; tipo++) {
+        for (ll vueltas = 1; vueltas <= d[tipo] && lap + vueltas <= n; vueltas++) {
+          ll nueva_lap = lap + vueltas;
+          ll costo = dp[lap][stops] + vueltas * t[tipo];
+
+          if (nueva_lap == n) {
+            dp[nueva_lap][stops] = min(dp[nueva_lap][stops], costo);
+          } else if (stops + 1 <= s) {
+            dp[nueva_lap][stops + 1] = min(dp[nueva_lap][stops + 1], costo + p);
+          }
+        }
       }
     }
   }
+
+  ll ans = INF;
+  for (ll stops = 0; stops <= s; stops++)
+    ans = min(ans, dp[n][stops]);
+  cout << ans << '\n';
 }
 
 int main() {
