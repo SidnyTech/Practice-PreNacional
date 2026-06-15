@@ -16,9 +16,9 @@ using pll = pair<ll, ll>;
 const ll INF = 4e18;
 const int MOD = 1e9 + 7;
 
-ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; } //gcd(12,18)=6 maximo comun divisor
-ll lcm(ll a, ll b) { return a / gcd(a, b) * b; } //lcm(4,6)=12 minimo comun multiplo
-ll binpow(ll a, ll b, ll m = MOD) {  // a^b
+ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }  //gcd(12,18)=6 maximo comun divisor
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }      //lcm(4,6)=12 minimo comun multiplo
+ll binpow(ll a, ll b, ll m = MOD) {                   // a^b
   ll r = 1;
   a %= m;
   for (; b; b >>= 1, a = a * a % m)

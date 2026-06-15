@@ -1,0 +1,23 @@
+/*
+  author: Sian01
+  name: Sidney A. Sahonero
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+  cout << "Silpancho";
+}
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  solve();
+}
+
+/*
+     /\_/\
+    ( o.o )
+     > ^ <
+*/
