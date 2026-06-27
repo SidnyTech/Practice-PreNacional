@@ -1,11 +1,10 @@
 /*
-  author: SiAn20
-  Name: Sidney Angelly Sahonero Garrado
+  author: Sian01
+  name: Sidney A. Sahonero
+  problem link: https://codeforces.com/group/5rSviDruPP/contest/657127/problem/B
 */
 #include <bits/stdc++.h>
 using namespace std;
-// #define int long long
-#define endl '\n'
 
 void solve() {
   int cnT = 0, cnC = 0, cnS = 0;
@@ -22,15 +21,14 @@ void solve() {
   }
 
   if (cnT == cnC && cnC == cnS)
-    cout << "YES" << endl;
+    cout << "YES" << '\n';
   else
-    cout << "NO" << endl;
+    cout << "NO" << '\n';
 }
 
 signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  cout.tie(nullptr);
 
   solve();
 }

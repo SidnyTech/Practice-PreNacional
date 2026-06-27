@@ -1,22 +1,20 @@
 /*
-  author: SiAn20
-  Name: Sidney Angelly Sahonero Garrado
+  author: Sian01
+  name: Sidney A. Sahonero
+  problem link: https://codeforces.com/group/5rSviDruPP/contest/657127/problem/A
 */
 #include <bits/stdc++.h>
 using namespace std;
-// #define int long long
-#define endl '\n'
 
 void solve() {
   string s;
   cin >> s;
-  cout << "Hello " << s << "!" << endl;
+  cout << "Hello " << s << "!" << '\n';
 }
 
 signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  cout.tie(nullptr);
 
   solve();
 }
