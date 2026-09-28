@@ -13,6 +13,12 @@ using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 using vi = vector<int>;
 using vll = vector<ll>;
+using vld = vector<ld>;
+using vvi = vector<vi>;
+using vvll = vector<vll>;
+using vpll = vector<pll>;
+using qi = queue<int>;
+using us = unordered_set<int>;
 #define pb push_back
 #define F first
 #define S second
