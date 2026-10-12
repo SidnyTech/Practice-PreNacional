@@ -19,6 +19,7 @@ using vvll = vector<vll>;
 using vpll = vector<pll>;
 using qi = queue<int>;
 using us = unordered_set<int>;
+#define nl "\n"
 #define pb push_back
 #define F first
 #define S second
